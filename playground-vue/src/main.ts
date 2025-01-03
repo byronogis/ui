@@ -1,7 +1,8 @@
 import { createApp, defineAsyncComponent, ref } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import uiPlugin from '@nuxt/ui/vue-plugin'
-
+import 'virtual:uno.css'
+import '../../playground/app/assets/main.css'
 import App from './app.vue'
 
 const pages = import.meta.glob('../../playground/app/pages/**/*.vue')

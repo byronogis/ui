@@ -90,8 +90,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.app.rootAttrs.class = [nuxt.options.app.rootAttrs.class, 'isolate'].filter(Boolean).join(' ')
 
     if (nuxt.options.builder === '@nuxt/vite-builder') {
-      const plugin = await import('@tailwindcss/vite').then(r => r.default)
-      addVitePlugin(plugin())
+      // const plugin = await import('@tailwindcss/vite').then(r => r.default)
+      // addVitePlugin(plugin())
     } else {
       nuxt.options.postcss.plugins['@tailwindcss/postcss'] = {}
     }

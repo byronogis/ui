@@ -4,7 +4,7 @@ import { join, normalize } from 'pathe'
 import { createUnplugin } from 'unplugin'
 import AutoImport from 'unplugin-auto-import'
 import { defu } from 'defu'
-import tailwind from '@tailwindcss/vite'
+// import tailwind from '@tailwindcss/vite'
 import type colors from 'tailwindcss/colors'
 
 import type * as ui from '#build/ui'
@@ -56,7 +56,7 @@ export const NuxtUIPlugin = createUnplugin<NuxtUIOptions | undefined>((_options 
     NuxtEnvironmentPlugin(),
     ...ComponentImportPlugin(meta.framework, options),
     AutoImport[meta.framework]({ dts: options.dts ?? true, dirs: [join(runtimeDir, 'composables')] }),
-    tailwind(),
+    // tailwind(),
     PluginsPlugin(options),
     TemplatePlugin(options, appConfig),
     AppConfigPlugin(options, appConfig)

@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import AutoImports from 'unplugin-auto-import/vite'
 import VueComponents from 'unplugin-vue-components'
-
+import UnoCSS from 'unocss/vite'
+import { resolve } from 'node:path'
 import ui from '../src/vite'
 
 // https://vitejs.dev/config/
@@ -20,7 +21,13 @@ export default defineConfig({
           primary: 'green',
           neutral: 'slate'
         }
+        // tailwind: {
+        //   prefix: 'tw'
+        // }
       }
+    }),
+    UnoCSS({
+      configFile: resolve(__dirname, '../playground/uno.config.ts')
     }),
     // these are required as we share the component pages with the Nuxt playground
     AutoImports({ imports: ['vue'] }),
