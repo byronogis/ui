@@ -1,2 +1,6 @@
 @import './tw.css';
-@import "./nuxt/index.css" layer(tailwindcss);
+@import "@nuxt/ui/runtime/index.css" layer(tailwindcss);
+
+/* TODO postcss-import Unknown word (will position to module.js file)  */
+/* @import "@nuxt/ui" layer(tailwindcss); */
+
