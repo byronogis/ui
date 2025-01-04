@@ -38,8 +38,6 @@ export default defineConfig({
   // ],
   rules: [
     [/(?:([^:\s]+):)?bg-.*?\[(var\(--[^-]+-[^)]+\))\]\/(\d+)/, function* ([_, modifier, color, alpha], { symbols }) {
-      // TODO why revice pure string like 'bg-[var(--ui-${color})]/10' in playground-vue ?
-      console.log({ _ })
       yield {
         background: `color-mix(in oklab, ${color} ${alpha}%, transparent)`
       }
@@ -73,7 +71,7 @@ export default defineConfig({
         // IMPORTANT include @nuxt/ui files
         /\.nuxt\/ui\//,
         // for playground-vue
-        /src\/theme\//
+        /nuxt-ui-templates\/ui\//
       ]
     }
   }
